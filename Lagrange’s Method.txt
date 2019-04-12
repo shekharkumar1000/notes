@@ -1,0 +1,65 @@
+# include <stdio.h>
+# include <conio.h>
+# include <math.h>
+# include <process.h>
+# include <string.h>
+//... MAIN EXECUTION THREAD
+void main()
+{
+//... Variable declaration Field
+//... Integer Type
+int n; //... Number of terms
+int i,j; //... Loop Variables
+//... Floating Type
+float ax[100]; //... array limit 99
+float ay[100]; //... array limit 99
+float x=0; //... User Querry
+float y=0; //... Initial value 0
+float nr; //... Calc. section
+float dr; //... Calc. section
+//... Invoke Function Clear Screen
+clrscr();
+//... Input Section
+printf("\n Enter the number of terms - ");
+scanf("%d",&n);
+//... Input Sequel for array X
+printf("\n\n Enter the value in the form of x - ");
+//... Input Loop for X
+for (i=0;i<n;i++)
+{
+printf ("\n\n Enter the value of x%d - ", i+1);
+scanf("%f",&ax[i]);
+}
+//... Input Sequel for array Y
+printf("\n\n Enter the value in the form of y - ");
+//... Input Loop for Y
+for (i=0;i<n;i++)
+{
+printf("\n\n Enter the value of y%d - ", i+1);
+scanf ("%f",&ay[i]);
+}
+//... Inputting the required value query
+printf("\n Enter the value of x for ");
+printf("\n which you want the value of y - ");
+scanf("%f",&x);
+//... Calculation & Processing Section
+for(i=0;i<n;i++)
+{
+nr=1;
+dr=1;
+for(j=0;j<n;j++)
+{
+if(j!=i)
+{
+nr=nr*(x-ax[j]);
+dr=dr*(ax[i]-ax[j]);
+}
+y+=(nr/dr)*ay[i];
+}
+}
+//... Output Section
+printf("\n\n When x=%5.2f,y=%5.2f ",x,y);
+//... Invoke User Watch Halt Function
+printf("\n\n\n Press Enter to Exit");
+getch();
+}
