@@ -1,0 +1,29 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <iomanip>
+using namespace std;
+
+
+double factorial(double n)
+{
+	if (n)
+	{
+		return n*factorial(n - 1);
+	}
+	else
+	{
+		return 1;
+	}
+}
+
+
+int main() {
+	/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+	double lambda, k;
+	cin >> lambda >> k;
+	cout << fixed << setprecision(3) << pow(lambda, k)*exp(-lambda) / factorial(k) << endl;
+	return 0;
+}

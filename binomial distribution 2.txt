@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int facto(int);
+void main()
+{
+            int n,r,nr,factN,factR,factNR;
+            double p,result;
+            clrscr();
+            printf("binomial distribution\n");
+            printf("enter the value of n:");
+            scanf("%d",&n);
+            printf("enter the value of r:");
+            scanf("%d",&r);
+            printf("enter the value of p:");
+            scanf("%lf",&p);
+            nr=n-r;
+            factN=facto(n);
+            factR=facto(r);
+            factNR=facto(nr);
+            result=(((factN/factR)*factNR)*pow(p,r)*(pow((1-p),nr)));
+            printf("\n result=%.3lf",result);
+            getch();
+}
+int facto(int n)
+{
+            return (n==1 || n==0) ? 1 : facto(n-1)*n;
+}
